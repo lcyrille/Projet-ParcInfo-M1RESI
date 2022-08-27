@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Ajout d'un ingénieur</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/accueil">Accueil</a></li>
+                <li><a href="/ingenieur/list">Liste ingénieurs</a></li>
+                <li><a href="/ingenieur/save">Ajout d'un ingenieur</a></li>
+                <li><a href="/ingenieur/edit">Modification d'un ingenieur</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h4>Ajout d'un nouvel ingénieur</h4>
+        <div class="row">
+            <form th:action="@{save}" method="post" class="col s12" >
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="prenom" type="text" class="validate" th:value="${ingenieur.prenom}"/>
+                        <label for="prenom">Prenom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="nom" type="text" class="validate" th:value="${ingenieur.nom}"/>
+                        <label for="nom">Nom</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" th:value="${ingenieur.email}"/>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" th:value="${ingenieur.password}"/>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light" type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

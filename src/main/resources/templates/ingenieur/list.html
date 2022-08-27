@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <title>Liste des ingénieurs</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/accueil">Accueil</a></li>
+                <li><a href="/ingenieur/list">Liste ingénieurs</a></li>
+                <li><a href="/ingenieur/save">Ajout d'un ingenieur</a></li>
+                <li><a href="/ingenieur/edit">Modification d'un ingenieur</a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class="container">
+            <h4>Liste des ingenieurs</h4>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOM</th>
+                        <th>PRENOM</th>
+                        <th>EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ing:${listIngenieurs}">
+                        <td th:text="${ing.id}"></td>
+                        <td th:text="${ing.nom}"></td>
+                        <td th:text="${ing.prenom}"></td>
+                        <td th:text="${ing.email}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
